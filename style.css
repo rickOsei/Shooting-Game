@@ -1,0 +1,166 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+#gameFrame{
+    width: 800px;
+    height: 600px;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+
+    background: url('./bg2.gif');
+    background-size: cover;
+    cursor: crosshair;
+}
+
+button{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(105deg, rgb(94, 90, 90), rgb(38, 121, 121));
+
+    border: none;
+    box-shadow: none;
+     
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgb(255, 217, 151);
+
+    opacity: 0.8;
+}
+
+.enemy{
+    width: 200px;
+    height: 300px;
+    background: url('./villian3.png');
+    background-size: cover;
+
+    position: absolute;
+    bottom: -400px;
+    transition: all 0.2s;
+}
+
+.enemy:before{
+    content: " o ";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 135px;
+    bottom: 92px;
+
+    background-color: #222;
+    color: #555;
+    text-align: center;
+
+    border-radius: 15px;
+    border-bottom: 10px solid #111;
+    border-right: 2px solid brown;
+}
+
+.enemy:after{
+    content: " o ";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 45px;
+    bottom: 100px;
+
+    background-color: #222;
+    color: #555;
+    text-align: center;
+
+    border-radius: 15px;
+    border-bottom: 10px solid #111;
+    border-right: 2px solid rgb(69, 24, 24);
+
+    transition: all 0.2s;
+}
+
+#enemy1{left: 0px;}
+#enemy2{left: 140px;}
+#enemy3{left: 290px;}
+#enemy4{left: 440px;}
+#enemy5{left: 580px;}
+
+/* New added classes */
+
+/* Class when player shoots */
+
+.dead{
+    transform: translateY(75px) rotate(-90deg);
+   
+   
+    /* bottom: -100px; */
+    
+}
+
+/* Enemies show and hide */
+
+.showing{
+    bottom: -15px;
+}
+
+/* Enemies shoots */
+
+.shooting{
+    background: #8b313105;
+}
+
+.shooting:after{
+    content: " * ";
+    left: 45px;
+    color: coral;
+
+    font-size: 1.5em;
+    transform: scale(1.5);
+
+    box-shadow: 10px -10px 15px black;
+}
+
+.shooting:before{
+    content: " * ";
+    left: 135px;
+    color: coral;
+
+    font-size: 1.5em;
+    transform: scale(1.5);
+
+    box-shadow: 10px -10px 15px black;
+}
+
+/* Defining health-bar */
+
+#healthBar{
+    width: 100%;
+    height: 15px;
+    background-color: rgb(208, 255, 0);
+    position: absolute;
+    left: 25px;
+}
+
+#healthContainer{
+    width: 50%;
+    height: 15px;
+    background-color: whitesmoke;
+    position: absolute;
+    left: 27px;
+    top: 12px;
+}
+
+.heart{
+    position: absolute;
+    left: 18px;
+    font-size: 30px;
+    z-index: 1;
+}

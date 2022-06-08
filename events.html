@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body,html{
+            padding: 0;
+            margin: 0;
+        }
+
+        #nav{
+            background-color: black;
+            color: white;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+
+        #demo {
+            width: 300px;
+            height: 300px;
+
+            position: relative;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .yellow{
+            background-color: yellow;
+        }
+
+        .blue{
+            background-color: blue;
+        }
+
+        .green{
+            background-color: green;
+        }
+
+        .beige{
+            background-color: beige;
+        }
+
+        .extraHeight{
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav" class="navigation">
+        <p>Page</p>
+    </div>
+    <div id="demo" class="blue">
+        <div id="box" class="yellow">
+            New In Town
+        </div>
+    </div>
+    <div class="" id="main">
+        <p id="first"> Oh Yeah </p>
+        <p id="second"> Oh Wow </p>
+        <p id="third"> Oh Hurray </p>
+    </div>
+
+    <form id="form">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <button>Submit</button>
+    </form>
+    <script>
+        let demo = document.getElementById('demo');
+        let box = demo.querySelector('#box');
+
+        // box.addEventListener('click', (e) => {
+        //     console.log(e.target)
+        //     e.target.textContent = 'clicking'
+        // });
+
+
+        document.addEventListener('readystatechange', (e) => {
+            if (e.target.readyState === 'complete') {
+                console.log('readyState: complete')
+                initApp();
+            }
+        });
+
+        const initApp = () => {
+            let demo = document.getElementById('demo');
+            let box = demo.querySelector('#box');
+           
+                demo.addEventListener('click', (e) => {
+                    demo.classList.toggle('green');
+                    demo.classList.toggle('blue')
+                    // demo.style.background = 'violet'
+                    // e.target.style.width = '400px'
+                });
+
+                box.addEventListener('click', (e) => {
+                    // event.stopPropagation();
+                    box.classList.toggle('beige');
+                    box.classList.toggle('yellow')
+                    // box.style.backgroundColor = 'yellow'
+                    // e.target.textContent = 'eeeii you'
+                });
+
+                const nav = document.querySelector('#nav');
+                nav.addEventListener('mouseover', (e) => {
+                    event.target.classList.add('extraHeight');
+                    // event.target.classList.remove('navigation');
+                });
+               
+                nav.addEventListener('mouseout', (e) => {
+                    event.target.classList.remove('extraHeight');
+                    // event.target.classList.remove('navigation');
+                });
+
+                let myForm = document.querySelector('#form');
+                myForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    console.log('submit event')
+                });
+
+                let name = document.querySelector('#name');
+                name.addEventListener('click', (e) => {
+                    name.value = name.value.toUpperCase();
+                })
+          
+        };
+
+
+
+
+        let main = document.querySelector('#main');
+        let first = main.querySelector('#first');
+        let second = main.querySelector('#second');
+        let third = main.querySelector('#third');
+
+
+
+    </script>
+</body>
+
+</html>

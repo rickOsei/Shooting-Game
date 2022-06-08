@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killer Move</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="gameFrame">
+            <div class="heart">🧡</div>
+            <div id="healthContainer"> <div id="healthBar"></div></div>
+            <div class="enemy" id="enemy1" onclick="playerShoot(this)"></div>
+            <div class="enemy" id="enemy2" onclick="playerShoot(this)"></div>
+            <div class="enemy" id="enemy3" onclick="playerShoot(this)"></div>
+            <div class="enemy" id="enemy4" onclick="playerShoot(this)"></div>
+            <div class="enemy" id="enemy5" onclick="playerShoot(this)"></div>
+           
+            <button onclick="newGame()">➡ New Game</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
